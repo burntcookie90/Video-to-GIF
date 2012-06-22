@@ -1,11 +1,11 @@
 #!/bin/bash
 echo Making a gif from time $1 for $2 seconds from video file $3 to output $4
 VARPATH="global variable"
-function __path_find {
+function _path_find {
 	VARPATH=`pwd $3`
 	echo $VARPATH
 }
-__path_find
+_path_find
 mkdir video_to_gif
 cd video_to_gif
 mplayer -ss $1 -endpos $2 -vo png $VARPATH/$3
